@@ -103,21 +103,30 @@ export default function Hero() {
         {/* Top Spacer */}
         <div className="h-20" />
 
-        {/* Bottom-Center Content: 2-Line Title, Description, and Regular Rectangular Button */}
+        {/* Bottom-Center Content: Logo, 2-Line Title, Description, and Regular Rectangular Button */}
         <div className="max-w-3xl w-full mx-auto px-4 pb-8 sm:pb-10 flex flex-col items-center text-center mt-auto">
+          {/* Brand Tagline Logo in hero center */}
+          <div className="mb-5 sm:mb-7 reveal-blur reveal-delay-1">
+            <img
+              src="/imagenes/tagline-logo.png"
+              alt="Paneles Solares Saltillo - Transformando el mañana"
+              className="w-44 sm:w-52 md:w-60 h-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.6)]"
+            />
+          </div>
+
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] font-bold tracking-[0.08em] uppercase text-white leading-[1.15]">
-            <span className="block reveal-blur reveal-delay-1">TRANSFORMA TU HOGAR</span>
-            <span className="block reveal-blur reveal-delay-2">CON PANELES SOLARES</span>
+            <span className="block reveal-blur reveal-delay-2">TRANSFORMA TU HOGAR</span>
+            <span className="block reveal-blur reveal-delay-3">CON PANELES SOLARES</span>
           </h1>
 
-          <p className="mt-4 text-white/80 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-xl font-normal reveal-blur reveal-delay-3">
+          <p className="mt-4 text-white/80 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-xl font-normal reveal-blur reveal-delay-4">
             Solicita una cotización para una instalación profesional con los
             mejores expertos en Saltillo, ahorra en tus facturas y contribuye al
             medio ambiente.
           </p>
 
           {/* Rectangular Button */}
-          <div className="mt-7 reveal-blur reveal-delay-4">
+          <div className="mt-7 reveal-blur reveal-delay-5">
             <a
               href="https://wa.me/5218443929525?text=Hola%20Paneles%20Solares%20Saltillo,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
               target="_blank"

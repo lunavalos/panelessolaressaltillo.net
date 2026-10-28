@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -30,6 +31,8 @@ function FacebookIcon({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 export default function Footer() {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   const handleScrollTo = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -270,9 +273,19 @@ export default function Footer() {
           {/* Second Horizontal Line */}
           <div className="w-full h-[1px] bg-white/15 my-8" />
 
-          {/* Bottom Copyright Row */}
+          {/* Bottom Copyright & Privacy Policy Row */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-white/75">
-            <p>© 2026 Paneles Solares Saltillo · Todos los derechos reservados</p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <p>© 2026 Paneles Solares Saltillo · Todos los derechos reservados</p>
+              <span className="hidden sm:inline text-white/30">·</span>
+              <button
+                type="button"
+                onClick={() => setPrivacyOpen(true)}
+                className="underline underline-offset-4 decoration-white/40 hover:decoration-[#2E71F2] hover:text-[#2E71F2] transition-colors cursor-pointer text-left font-medium"
+              >
+                Aviso de Privacidad
+              </button>
+            </div>
             <a
               href="https://lunavalos.com/"
               target="_blank"
@@ -284,6 +297,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Modal Popup de Aviso de Privacidad */}
+      <PrivacyPolicyModal
+        isOpen={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+      />
     </footer>
   );
 }
